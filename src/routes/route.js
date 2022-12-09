@@ -33,6 +33,12 @@ router.get("/test-me", function (req, res) {
   
 });
 
+router.get("/get-movies",function (req,res){
+  let movies=["Rang de basanti, The shining, Lord of the rings, Batman begins"]
+  res.send(movies)
+
+})
+
 router.get("/test-you", function (req, res) {
   console.log("I am here");
   res.send("very important text");
