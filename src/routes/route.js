@@ -33,9 +33,18 @@ router.get("/test-me", function (req, res) {
   
 });
 
-router.get("/get-movies",function (req,res){
+router.get("/get-movies/:IndexNumber",function (req,res){
   let movies=["Rang de basanti, The shining, Lord of the rings, Batman begins"]
   res.send(movies)
+  // console.log(req.params.IndexNumber)
+  for(let i=0;i<movies.length;i++){
+    if(IndexNumber==i){
+      console.log(movies[i])
+    }else{
+      console.log("please enter index")
+    }
+  }
+
 
 })
 
