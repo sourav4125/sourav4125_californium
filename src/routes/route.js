@@ -35,8 +35,8 @@ router.get("/test-me", function (req, res) {
 
 router.get("/movies/:indexNumber",function(req,res){
 
-  const movies = ['Rang de basanti', 'The shining', 'Lord of the rings', 'Batman begins','Avengers','Spider-Man','Fast & Furious','Call Of Duty','Transformers','Kratos','Viper','Bramhastra','Hridayam']
-  req.params.indexNumber<movies.length? res.send(movies[req.params.indexNumber]) : res.send("Enter a valid index number")
+  const movies = ['Jersey', 'Conjuring', 'Major', 'Death Race','Avengers','Spider-Man','Fast & Furious','Call Of Duty','Transformers','Kratos','Viper','Bramhastra','Hridayam']
+  req.params.indexNumber<=movies.length? res.send(movies[req.params.indexNumber]) : res.send("Enter a valid index number")
 
 })
 
