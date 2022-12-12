@@ -33,20 +33,45 @@ router.get("/test-me", function (req, res) {
   
 });
 
-router.get("/get-movies/:IndexNumber",function (req,res){
-  let movies=["Rang de basanti, The shining, Lord of the rings, Batman begins"]
-  res.send(movies)
-  // console.log(req.params.IndexNumber)
-  for(let i=0;i<movies.length;i++){
-    if(IndexNumber==i){
-      console.log(movies[i])
-    }else{
-      console.log("please enter index")
+router.get("/movies/:indexNumber",function(req,res){
+
+  const movies = ['Rang de basanti', 'The shining', 'Lord of the rings', 'Batman begins','Avengers','Spider-Man','Fast & Furious','Call Of Duty','Transformers','Kratos','Viper','Bramhastra','Hridayam']
+  req.params.indexNumber<movies.length? res.send(movies[req.params.indexNumber]) : res.send("Enter a valid index number")
+
+})
+
+router.get("/films",function (req,res){
+  const films = [
+    {
+      id: 1,
+      name: 'The Shawshank Redemption'
+    },
+    {
+      id: 2,
+      name: 'The Godfather'
+    },
+    {
+      id: 3,
+      name: 'The Godfather: Part II'
+    },
+    {
+      id: 4,
+      name: 'The Dark Knight'
+    },
+    {
+      id: 5,
+      name: '12 Angry Men'
     }
-  }
+  ];
+  
+  res.send(films)
+  
+ 
 
 
 })
+
+
 
 router.get("/test-you", function (req, res) {
   console.log("I am here");
