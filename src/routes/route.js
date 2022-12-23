@@ -5,6 +5,23 @@ const UserController= require("../controllers/userController")
 const BookController= require("../controllers/bookController")
 const commonMW = require ("../middlewares/commonMiddlewares")
 
+//----------------------------------->
+const JaiCard=require("../controllers/jaicardcontroller")
+const JaiCustomer=require("../controllers/jaicustomercontroller")
+
+
+
+ router.post("/createcard", JaiCard.createcard  )
+  router.post("/createcutomer", JaiCustomer.createcustomer)
+router.get("/getallcard",JaiCard.getcardData)
+router.get("/getallcustomer",JaiCustomer.getcustomerData)
+
+
+
+
+
+
+
 router.get("/test-me", function (req, res) {
     res.send("My first ever api!")
 })
